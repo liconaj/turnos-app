@@ -1,16 +1,14 @@
 export const personNames = [
-	'Alexander Hernández',
-	'Migdalia Torres',
-	'Susej Hernández',
-	'Adriana Camargo',
-	'Betty',
-	'Sharon Pérez',
-	'Josué Licona',
-	'Javier',
-	'Laura Zamora',
-	'Liliana Zamora',
-	'Emilin Beltrán',
-	'Jonattan Lalinde'
+	'Hassan Golden',
+	'Don Sibley',
+	'Jabari Velazquez',
+	'Rayne Banuelos',
+	'Rory Benedict',
+	'Shaun Hawley',
+	'Madalyn Chester',
+	'Marisol Purvis',
+	'Raven Norwood',
+	'Sincere Troyer'
 ];
 
 export const persons = personNames.map((name, index) => ({
