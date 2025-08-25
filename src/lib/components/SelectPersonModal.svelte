@@ -1,15 +1,22 @@
 <script>
 	import { getPersons } from '$lib/services/api';
+	import { appState } from '$lib/state.svelte';
 	import Modal from './Modal.svelte';
 
 	let { dialog = $bindable() } = $props();
 
-	const defaultText = 'Seleccionar persona';
-
-	let selectedPerson = $state(defaultText);
+	const defaultText = '--Seleccionar persona--';
+	/**
+	 * @type {Person | null}
+	 */
+	let selectedPerson = $state(null);
 
 	function onclose() {
-		selectedPerson = defaultText;
+		selectedPerson = null;
+	}
+
+	function oncontinue() {
+		appState.currentPerson = selectedPerson;
 	}
 </script>
 
@@ -23,9 +30,9 @@
 			</select>
 		{:then persons}
 			<select bind:value={selectedPerson} class="select w-full select-lg">
-				<option disabled>{defaultText}</option>
+				<option value={null} disabled>{defaultText}</option>
 				{#each persons.sort() as person, i}
-					<option>
+					<option value={person}>
 						{person.name}
 					</option>
 				{/each}
@@ -35,8 +42,19 @@
 
 	<!--Botón de continuar-->
 	<div class="modal-action">
-		<button disabled={selectedPerson === defaultText} class="btn btn-block btn-lg btn-neutral">
-			Aceptar
-		</button>
+		<!--Cancel-->
+		<form method="dialog" class="flex-1">
+			<button class="btn w-full btn-ghost" onclick={() => onclose()}> Cancelar </button>
+		</form>
+		<!--Continue-->
+		<form method="dialog" class="flex-1">
+			<button
+				disabled={selectedPerson === null}
+				onclick={() => oncontinue()}
+				class="btn w-full btn-primary"
+			>
+				Continuar
+			</button>
+		</form>
 	</div>
 </Modal>
