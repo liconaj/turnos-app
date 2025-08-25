@@ -6,5 +6,5 @@
 
 /**
  * @typedef {Object} AppState
- * @property {Person[]} persons
+ * @property {Person | null} currentPerson
  */

@@ -2,5 +2,5 @@
  * @type {AppState}
  */
 export const appState = $state({
-	persons: []
+	currentPerson: null
 });
