@@ -1,7 +1,7 @@
 <script>
 	import { appState } from '$lib/state.svelte';
 
-	let { children = null } = $props();
+	let { children = null, isButton = true } = $props();
 
 	/**
 	 * Returns initials of a name
@@ -29,7 +29,11 @@
 </script>
 
 <div class="avatar avatar-placeholder">
-	<div class="w-12 rounded-full bg-primary text-primary-content hover:bg-primary/80">
+	<div
+		class="w-12 rounded-full bg-primary text-primary-content {isButton
+			? 'hover:bg-primary/80'
+			: ''}"
+	>
 		{#if children}
 			{@render children()}
 		{:else}
