@@ -1,0 +1,18 @@
+{
+    "name": "turnos_app",
+    "dockerComposeFile": "compose.yaml",
+    "service": "sveltekit-app",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "esbenp.prettier-vscode",
+                "svelte.svelte-vscode",
+                "bradlc.vscode-tailwindcss",
+                "ms-azuretools.vscode-containers",
+                "ecmel.vscode-html-css",
+                "formulahendry.auto-rename-tag"
+            ]
+        }
+    }
+}

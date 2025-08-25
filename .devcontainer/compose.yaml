@@ -1,0 +1,12 @@
+name: turnos_app
+
+services:
+  sveltekit-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+    - ../..:/workspaces:cached
+    command: sleep infinity
+    ports:
+      - "5173:5173"

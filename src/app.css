@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Special+Gothic+Condensed+One&display=swap');
+@import 'tailwindcss';
+
+@plugin 'daisyui' {
+	themes: light --default;
+}
+
+@plugin "daisyui/theme" {
+	name: 'light';
+	default: false;
+	prefersdark: false;
+	color-scheme: 'light';
+	--color-primary: oklch(48% 0.243 264.376);
+	--depth: 0;
+	--noise: 0;
+}
+
+@plugin "daisyui/theme" {
+	name: 'dark';
+	default: false;
+	prefersdark: false;
+	color-scheme: 'dark';
+	--color-primary: oklch(54% 0.245 262.881);
+	--depth: 0;
+	--noise: 0;
+}
+
+.font-logo-1 {
+	font-family: 'Lobster Two', sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.font-logo-2 {
+	font-family: 'Special Gothic Condensed One', sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}

@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "*.css": "tailwindcss"
+    },
+
+    "tailwindCSS.includeLanguages": {
+        "svelte": "html"
+    },
+
+    "editor.formatOnPaste": true,
+
+    "editor.formatOnSave": true
+}
