@@ -13,6 +13,6 @@
 <header>
 	<Navbar />
 </header>
-<main>
+<main class="m-6">
 	{@render children?.()}
 </main>
