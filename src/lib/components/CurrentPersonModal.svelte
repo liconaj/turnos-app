@@ -18,12 +18,14 @@
 
 	<div class="modal-action flex w-full">
 		<!--Exit-->
-		<form method="dialog" class="flex-1">
-			<button class="btn w-full btn-soft btn-secondary" onclick={() => onexit()}> Salir </button>
+		<form id="exit-form" method="dialog" class="flex-1">
+			<button type="button" class="btn w-full btn-soft btn-secondary" onclick={() => onexit()}>
+				Salir
+			</button>
 		</form>
 		<!--Accept-->
-		<form method="dialog" class="flex-1">
-			<button class="btn w-full btn-neutral"> Aceptar </button>
+		<form id="accept-current-person-form" method="dialog" class="flex-1">
+			<button type="button" class="btn w-full btn-neutral"> Aceptar </button>
 		</form>
 	</div>
 </Modal>

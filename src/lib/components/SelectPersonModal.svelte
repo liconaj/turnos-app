@@ -25,11 +25,11 @@
 	<fieldset class="fieldset">
 		<legend class="fieldset-legend">Gestionar turnos de</legend>
 		{#await getPersons()}
-			<select class="select w-full select-lg" disabled>
+			<select id="select-person-loading" class="select w-full select-lg" disabled>
 				<option>Cargando personas...</option>
 			</select>
 		{:then persons}
-			<select bind:value={selectedPerson} class="select w-full select-lg">
+			<select id="select-person" bind:value={selectedPerson} class="select w-full select-lg">
 				<option value={null} disabled>{defaultText}</option>
 				{#each persons.sort() as person, i}
 					<option value={person}>
@@ -43,12 +43,15 @@
 	<!--Botón de continuar-->
 	<div class="modal-action">
 		<!--Cancel-->
-		<form method="dialog" class="flex-1">
-			<button class="btn w-full btn-ghost" onclick={() => onclose()}> Cancelar </button>
+		<form name="cancel-form" method="dialog" class="flex-1">
+			<button type="button" class="btn w-full btn-ghost" onclick={() => onclose()}>
+				Cancelar
+			</button>
 		</form>
 		<!--Continue-->
-		<form method="dialog" class="flex-1">
+		<form id="continue-with-user-form" method="dialog" class="flex-1">
 			<button
+				type="button"
 				disabled={selectedPerson === null}
 				onclick={() => oncontinue()}
 				class="btn w-full btn-primary"

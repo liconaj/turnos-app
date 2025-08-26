@@ -4,8 +4,9 @@
 
 <dialog bind:this={dialog} class="modal">
 	<div class="modal-box scroll-auto bg-base-100">
-		<form method="dialog">
+		<form method="dialog" id="close-form">
 			<button
+				type="button"
 				aria-label="close"
 				class="btn absolute top-2 right-2 btn-circle btn-ghost btn-sm"
 				onclick={() => onclose()}
